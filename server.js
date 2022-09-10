@@ -2,11 +2,8 @@ const express = require("express");
 
 const app = express();
 
-app.listen(3000,function () {
-    console.log(`Starting the express server at localhost:3000...`);
-})
 app.get("/",function(req,res){
-
+   
 res.send("<title>Express</title><h1>I'm creating servers</h1>");
 
 // res.send(index.html);
@@ -21,6 +18,14 @@ app.get("/about",function (req,res)
 
 app.get("/naeem",function (req,res) 
 {
-   app.send("hello there nodemon!"); 
+   res.send("hello there nodemon!"); 
+});
+
+app.get("/bmiCalculator",function(req,res){
+   res.sendFile(__dirname+"/BMI.html");
+});
+
+app.listen(3000,function () {
+    console.log(`Starting the express server at localhost:3000...`);
 });
 // console.log(app);
